@@ -1,7 +1,6 @@
 <script setup lang="ts">
-    import { useCart, total, removeFromCart } from '@/model/cart';
-
-    const cart = useCart();
+    import { removeFromWorkout, amountofWorkouts, useWorkoutCollection } from '@/model/workoutCollection';
+    const workoutCollection = useWorkoutCollection();
 
     
 </script>
@@ -9,26 +8,29 @@
 <template>
     <div class="cart">
         <h1 class="title">
-            Cart
+            Workouts
             <small>
-                ${{ total }}
-                ({{ cart.length }} items)
+                {{ amountofWorkouts }}
+                ({{ workoutCollection.length }} items)
             </small>
         </h1>
         <p></p>
-        <div class="cart-item" v-for="item, i in cart">
-            <img :src="item.product.thumbnail" alt="product image" />
+        <div class="cart-item" v-for="item, i in workoutCollection">
             <div>
-                <b>{{ item.product.title }}</b>
+                <b>{{ item.product.exercise }}</b>
                 <p>
-                    ${{ item.product.price }}
-                    x 
-                    <select v-model="item.quantity" class="quantity-dropdown">
-                        <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
-                    </select>
-                </p>            
+                    Muscle Group: {{ item.product.bodyPart }}
+                    <br>
+                    Number of Sets: {{ item.sets }}
+                    <br>
+                    Number of reps in set : {{ item.reps }}
+                    <br>
+                    Weight on workout: {{ item.weight }}
+                    
+                </p>
+
             </div>
-            <button class="button is-danger" @click="removeFromCart(i)">
+            <button class="button is-danger" @click="removeFromWorkout(i)">
                 <span class="icon">
                     <i class="fas fa-trash"></i>
                 </span>
@@ -53,7 +55,7 @@
         justify-content: space-between;
         margin: 5px;
         padding-right: 5px;
-        border-radius: 15px;
+
         overflow: hidden;
         background-color: lavenderblush;
 

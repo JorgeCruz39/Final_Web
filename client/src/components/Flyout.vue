@@ -11,9 +11,10 @@
 
 <style scoped>
     .flyout {
+        z-index: 10;
         position: fixed;
         top: 52px;
-        right: -18rem;
+        right: -20rem;
         width: 20rem;
         height: calc(100vh - 52px);
         background-color: white;

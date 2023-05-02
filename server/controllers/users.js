@@ -33,7 +33,7 @@ router
     })
 
     .post('/', requireLogin(true) ,(req, res, next) => {
-
+    
         model.add(req.body)
             .then(x => {
                 const data = { data: x, isSuccess: true };
@@ -84,6 +84,9 @@ router
                 res.send(data)
             }).catch(next);
     })
+
+
+
 
 module.exports = router;
 
