@@ -34,8 +34,8 @@ import { useSession, addMessage } from '@/model/session';
 <template>
     <form class="admin-product-edit" @submit.prevent="save()">
 
-        <h1 class="title" v-if="product.id">Edit Product</h1>
-        <h1 class="title" v-else>Add New Product</h1>
+
+        <h1 class="title">Add New Product</h1>
 
         <div class="field">
             <label class="label">Title</label>
