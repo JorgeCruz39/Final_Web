@@ -35,9 +35,8 @@ export function addToWorkoutCollection(product: Excercise, weight: number, sets:
     }
 }
 
-export function removeFromCart(index: number) {
+export function removeFromWorkout(index: number) {
         WorkoutCollection.value.splice(index, 1);
 }
 
-export const quantity = computed(() => WorkoutCollection.value.reduce((total, item) => total + item.quantity, 0));
-export const total = computed(()=> WorkoutCollection.value.reduce((total, item) => total + 1 * item.quantity, 0))
+export const amountofWorkouts = computed(() => WorkoutCollection.value.reduce((total, item) => total + item.quantity, 0));

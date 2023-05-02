@@ -25,8 +25,3 @@ export function createExcercise(excercise: Excercise): Promise<DataEnvelope<Exce
         return api('excercise', excercise)
 }
 
-export async function getExcerciseBP(bodypart: string): Promise<DataListEnvelope<Excercise>> {
-
-    return api(`excercise/${bodypart}`)
-
-}
