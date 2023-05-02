@@ -42,8 +42,11 @@ const weight = ref(0)
         <progress v-if="!excercises.length" class="progress is-large is-info" max="100">60%</progress>
         <!--Display excercises by body part -->
         <div> 
-                <h1>Dont See a Workout? Click Here to add one!</h1>
-                <button class="button is-primary" @click="">+</button>
+                <h1>Dont See an excercise? Click Here to add one!</h1>
+                <router-link to="excerciseAdd">
+                    <span>Add an excercise</span>
+                </router-link>
+
              </div>
         <div class="product-list" v-for="excercise in excercises " :key="excercise.id" >
             <div class="product" v-if="excercise.bodyPart === selected ">
