@@ -1,0 +1,125 @@
+{
+    "users": [
+    {
+    "id" : 1,
+    "name" : "Jorge",
+    "email" : "Jorge@Cruz.com",
+    "photo" : "",
+    "password" : "1",
+    "isAdmin" : true,
+    "workouts" : [
+      {
+          "workout": "Bench Press",
+          "weight": 240
+      },
+      {
+          "workout": "Squat",
+          "weight": 275
+      },
+      {
+          "workout": "Deadlift",
+          "weight": 440
+      }
+  ]
+
+
+    
+    
+},
+{
+    "id" : 2,
+    "name" : "Jorge",
+    "email" : "Jorge@Cruz.com",
+    "photo" : "",
+    "password" : "1",
+    "isAdmin" : true,
+    "workouts" : [
+      {
+        "id" : 1,
+        "exercise":"Bench press", 
+        "description":"The bench press is an upper body strength training exercise that consists of pressing a weight upwards from a supine position. The exercise works the pectoralis major as well as supporting chest, arm, and shoulder muscles such as the anterior deltoids, serratus anterior, coracobrachialis, scapulae fixers, trapezii, and the triceps. A barbell is generally used to hold the weight.",
+        "bodyPart":"chest"
+      },
+      {
+        "id" : 2,
+    	"exercise":"Pushups",
+    	"description":"A push-up is a common calisthenics exercise performed in a prone position by raising and lowering the body using the arms. Push-ups exercise the pectoral muscles, triceps, and anterior deltoids, with ancillary benefits to the rest of the deltoids, serratus anterior, coracobrachialis and the midsection as a whole. Push-ups are a basic exercise used in civilian athletic training or physical education and commonly in military physical training. They are also a common form of punishment used in the military, school sport, or in some martial arts disciplines.",
+    	"bodyPart":"chest"
+      },
+      {
+        "id" : 10,
+        "exercise":"Cable pushdown",
+        "description":"A cable pushdown is a strength training exercise used for strengthening the triceps muscles in the back of the arm. The exercise is completed by pushing a cable downward against resistance, typically provided by a set of adjustable weights. This exercise is an example of the primary function of the triceps, extension of the elbow joint.",
+        "bodyPart":"arm"
+      }
+  ]
+
+
+    
+    
+},
+{
+    "id" : 3,
+    "name" : "Jorge",
+    "email" : "Jorge@Cruz.com",
+    "photo" : "",
+    "password" : "1",
+    "isAdmin" : true,
+    "workouts" : [
+      {
+        "id" : 13,
+        "exercise":"Seated row",
+        "description":"In strength training, rowing is an exercise where the purpose is to strengthen the muscles that draw the rower's arms toward the body as well as those that retract the scapulae and those that support the spine. When done on a rowing machine, rowing also exercises muscles that extend and support the legs (quadriceps and thigh muscles). In all cases, the abdominal and lower back muscles must be used in order to support the body and prevent back injury.",
+        "bodyPart":"back"
+      },
+      {
+        "id" : 15,
+        "exercise":"Barbell row",
+        "description":"A barbell row is a weight training exercise that targets a variety of back muscles. Which ones are targeted varies on form. The bent over row is often used for both bodybuilding and powerlifting. It is a good exercise for increasing strength and size.",
+        "bodyPart":"back"
+      },
+      {
+        "id" : 18,
+        "exercise":"Twist abs",
+        "description":"A variation of situps where the individual twists their torso while performing a standard sit-up",
+        "bodyPart":"abs"
+      }
+  ]
+
+
+    
+    
+},{
+    "id" : 4,
+    "name" : "Jorge",
+    "email" : "Jorge@Cruz.com",
+    "photo" : "",
+    "password" : "1",
+    "isAdmin" : true,
+    "workouts" : [
+      {
+        "id" : 19,
+        "exercise":"Incline situp",
+        "description":"A variation of situps where the individual begins with their body below their legs. This is typically done on a decline bench that anchors the feet in place.",
+        "bodyPart":"abs"
+      },
+      {
+        "id" : 20,
+        "exercise":"Dips",
+        "description":"The dip is an exercise used in strength training. Narrow, shoulder-width dips primarily train the triceps, with major synergists being the anterior deltoid, the pectoralis muscles, and the rhomboid muscles of the back",
+        "bodyPart":"chest"
+      },
+      {
+        "id" : 1,
+        "exercise":"Bench press", 
+        "description":"The bench press is an upper body strength training exercise that consists of pressing a weight upwards from a supine position. The exercise works the pectoralis major as well as supporting chest, arm, and shoulder muscles such as the anterior deltoids, serratus anterior, coracobrachialis, scapulae fixers, trapezii, and the triceps. A barbell is generally used to hold the weight.",
+        "bodyPart":"chest"
+      }
+  ]
+
+
+    
+    
+}
+  ]
+}

@@ -1,12 +1,7 @@
-//const data = require('../data/products.json');
-const jwt = require('jsonwebtoken');
+const data = require('../data/products.json');
 const { connect, ObjectId } = require('./mongo');
-const { env } = require('process');
-const data = require('../data/users.json');
 
-const COLLECTION_NAME = 'users';
-
-
+const COLLECTION_NAME = 'products';
 
 async function collection() {
     const db = await connect();
@@ -58,8 +53,9 @@ async function search(searchTerm, page = 1, pageSize = 30) {
     const col = await collection();
     const query = {
         $or: [
-            { name: { $regex: searchTerm, $options: 'i' } },
-            { email: { $regex: searchTerm, $options: 'i' } },
+            { title: { $regex: searchTerm, $options: 'i' } },
+            { description: { $regex: searchTerm, $options: 'i' } },
+            { brand: { $regex: searchTerm, $options: 'i' } }
         ]
     };
 
@@ -70,58 +66,9 @@ async function search(searchTerm, page = 1, pageSize = 30) {
 
 async function seed() {
     const col = await collection();
-    const result = await col.insertMany(data);
+    const result = await col.insertMany(data.products);
     return result.insertedCount;
 }
-
-async function login(email, password) {
-    const col = await collection();
-    const user = await col.findOne({ email });
-    if (!user) {
-        throw new Error('User not found');
-    }
-    if (user.password !== password) {
-        throw new Error('Invalid password');
-    }
-
-    const cleanUser = { ...user, password: undefined };
-    const token = await generateTokenAsync(cleanUser, '1d');
-
-    return { user: cleanUser, token };
-}
-
-async function oAuthLogin(provider, accessToken) {
-    // validate the access token
-    // if valid, return the user
-    // if not, create a new user
-    // return the user
-}
-
-function generateTokenAsync(user, expiresIn) {
-    return new Promise( (resolve, reject) => {
-        jwt.sign(user, process.env.JWT_SECRET ?? "", { expiresIn }, (err, token) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(token);
-            }
-        });
-    });
-}
-
-function verifyTokenAsync(token) {
-    return new Promise( (resolve, reject) => {
-        jwt.verify(token, process.env.JWT_SECRET ?? "", (err, user) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(user);
-            }
-        });
-    });
-}
-
-
 
 module.exports = {
     getAll,
@@ -131,8 +78,4 @@ module.exports = {
     deleteItem,
     search,
     seed,
-    login,
-    oAuthLogin,
-    generateTokenAsync,
-    verifyTokenAsync,
 };
