@@ -1,13 +1,14 @@
 import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 import { api,  useSession } from "./session";
 import type { User } from "./session";
-import {WorkoutCollection, type WorkoutItem} from "./workoutCollection";
+import type {WorkoutItem } from "./workoutCollection";
+import { useWorkoutCollection } from '../model/workoutCollection';
+import { ref } from "vue";
+
 
 const session = useSession();
 
-export function useWorkoutCollection() {
-    return WorkoutCollection;
-}
+const collectionWorkouts = ref(useWorkoutCollection() as any);
 
 export interface Workout {
     id: number;
@@ -28,10 +29,10 @@ export function getWorkout(id: number): Promise<DataEnvelope<Workout>> {
 
 }
 
-export function createWorkout(WorkoutCollection: any): Promise<DataEnvelope<Workout>> {
-        return api('workout', WorkoutCollection, 'POST')
+export function createWorkout(collectionWorkouts: any): Promise<DataEnvelope<Workout>> {
+        return api('workout', collectionWorkouts)
 }
 
-export function deleteExcercise(id: number): Promise<DataEnvelope<Workout>> {
+export function deleteWorkout(id: number): Promise<DataEnvelope<Workout>> {
         return api(`workout/${id}`, undefined, 'DELETE')
 }

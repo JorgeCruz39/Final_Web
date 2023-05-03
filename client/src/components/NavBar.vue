@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import { quantity } from '../model/cart';
+import { WorkoutCollection } from '../model/workoutCollection';
 import Cart from './Cart.vue';
 import Flyout from './Flyout.vue';
 import LoginBadge from './LoginBadge.vue';
@@ -20,11 +20,6 @@ import Notifications from './Notifications.vue';
     <nav class="navbar is-primary">
         <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            
-            <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
-            
-          </a>
           <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
             <span></span>
             <span></span>
@@ -68,7 +63,7 @@ import Notifications from './Notifications.vue';
                 <button class="button  is-primary" :class="{ 'is-active': isCartActive }" @click="isCartActive = !isCartActive">
                     <span class="icon">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="tag is-danger quantity-tag">{{ quantity }}</span>
+                        <span class="tag is-danger quantity-tag">{{ WorkoutCollection.length }}</span>
                     </span>
                 </button>
             </div>

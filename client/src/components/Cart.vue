@@ -1,11 +1,12 @@
 <script setup lang="ts">
-    import { removeFromWorkout, amountofWorkouts, useWorkoutCollection, clearWorkoutCollection, WorkoutCollection, } from '@/model/workoutCollection';
+    import { removeFromWorkout, amountofWorkouts, useWorkoutCollection, clearWorkoutCollection, WorkoutCollection, calories } from '@/model/workoutCollection';
     import { ref } from 'vue';
     import { createWorkout } from '@/model/Workouts';
     const workoutCollection = useWorkoutCollection();
 
 
-    
+    const collectionWorkoutsArr = ref(useWorkoutCollection());
+
 
 
 </script>
@@ -15,8 +16,7 @@
         <h1 class="title">
             Workouts
             <small>
-                {{ amountofWorkouts }}
-                ({{ workoutCollection.length }} items)
+                ({{ workoutCollection.length }} excercises)
             </small>
         </h1>
         <p></p>
@@ -33,20 +33,22 @@
                     Weight on workout: {{ item.weight }}
                     
                 </p>
+                
 
             </div>
+           
             <button class="button is-danger" @click="removeFromWorkout(i)">
                 <span class="icon">
                     <i class="fas fa-trash"></i>
                 </span>
             </button>
         </div>
-        <br>
+        <br> calories Burned: {{ calories }}
         <button class="button is-primary" @click="clearWorkoutCollection()">
             Clear Workouts
         </button>
         <br>
-        <button class="button is-primary" @click="createWorkout(WorkoutCollection)">
+        <button class="button is-primary" @click="createWorkout(collectionWorkoutsArr)">
             Save Workouts
         </button>
         

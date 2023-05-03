@@ -4,25 +4,26 @@ import {  getWorkouts, type Workout } from '@/model/Workouts';
 import { createWorkout } from '@/model/Workouts';
 import { useSession, addMessage } from '@/model/session';
 import { useRoute } from 'vue-router';
+import { useWorkoutCollection, WorkoutCollection } from '../model/workoutCollection';
 
 const session = useSession();
 const route = useRoute(); 
 
-const workouts = ref<Workout[]>([]);
 
-  getWorkouts().then((data) => {
-    workouts.value = data.data;
-});
-
+const collectionWorkouts = ref(useWorkoutCollection());
 
 
   
-
+console.log(collectionWorkouts.value)
 </script>
 
 <template>
 
 
+
+<div v-for="workout in collectionWorkouts" >
+  {{ workout.product.exercise }}
+</div>
 
   
 </template>
