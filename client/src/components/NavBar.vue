@@ -6,7 +6,8 @@ import Cart from './Cart.vue';
 import Flyout from './Flyout.vue';
 import LoginBadge from './LoginBadge.vue';
 import Notifications from './Notifications.vue';
-
+import { useSession } from '@/model/session';
+const session = useSession();
     const isMenuActive = ref(false);
     const isCartActive = ref(false);
 
@@ -17,7 +18,7 @@ import Notifications from './Notifications.vue';
 </script>
 
 <template>
-    <nav class="navbar is-primary">
+    <nav class="navbar is-primary ">
         <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
@@ -41,11 +42,11 @@ import Notifications from './Notifications.vue';
             <RouterLink to="/addWorkout" class="navbar-item">Add Workout</RouterLink>
 
 
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item has-dropdown is-hoverable" v-if="session.user?.isAdmin">
               <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
                 Admin
               </a>
-              <div class="navbar-dropdown">
+              <div class="navbar-dropdown" >
                 <RouterLink class="navbar-item" to="/admin/products">
                   Products
                 </RouterLink>
@@ -71,26 +72,6 @@ import Notifications from './Notifications.vue';
             <LoginBadge />
 
             <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                    <span class="icon">
-                      <i class="fab fa-twitter"></i>
-                    </span>
-                    <span>
-                      Tweet
-                    </span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
-                    <span class="icon">
-                      <i class="fas fa-download"></i>
-                    </span>
-                    <span>Download</span>
-                  </a>
-                </p>
-              </div>
             </div>
           </div>
         </div>

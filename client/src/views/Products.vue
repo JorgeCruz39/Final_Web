@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { getExcercise, getExcercises, type Excercise } from '../model/Excercise'
+import {  getExcercises, type Excercise } from '../model/Excercise'
 import {addToWorkoutCollection} from '../model/workoutCollection'
 
 const excercises = ref<Excercise[]>([]);

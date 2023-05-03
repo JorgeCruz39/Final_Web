@@ -4,35 +4,24 @@ import { ref } from 'vue';
 import NewWorkoutadd from '@/components/NewWorkoutadd.vue';
 import { useSession } from '@/model/session';
 import WorkoutSocial from '@/components/WorkoutsSocial.vue';
-
 const isWorkoutActive = ref(false);
 const session = useSession();
-
 const isCadrioActive = ref(false);
-
-
-
-
-
 function toggleWorkout() {
     isWorkoutActive.value = !isWorkoutActive.value;
-    console.log(isWorkoutActive);
-}
-
-
+    console.log(isWorkoutActive);}
 </script>
 
 
-
 <template>
-    <div>
+    <div v-if="session.user">
         <div class="container">
 
         <div class="column is-quarter"></div>
            
             <div class="column">
 
-                <div class="button is-primary is-large is-fullwidth" @click="toggleWorkout" > Add Workout</div>    
+                
                 <div v-if="isWorkoutActive==true" class="modal is-active">  
                     <div class="modal-content">  
                     <NewWorkoutadd @close="isWorkoutActive=false"/>
@@ -47,16 +36,15 @@ function toggleWorkout() {
                      </div>
                  </div>
                  </div>
-
-               
-                 
-
-                                  
+                <div class="button is-primary is-large is-fullwidth" @click="toggleWorkout" > Add Workout</div>                                      
             </div>
 
             </div>
 
         </div>
+<div class="notLoggedin " v-else>
+You are not Logged in!
+</div>
 
 
         
@@ -103,5 +91,15 @@ function toggleWorkout() {
     margin-left: 28rem;
 }
 
+
+.notLoggedin{
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: black;
+}
 
 </style>

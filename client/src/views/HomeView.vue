@@ -57,9 +57,9 @@ const session = useSession();
       </div>
    </div>
 </div>
-   <div v-else>
-     <h1>Not Logged in!</h1>
-   </div>
+<div class="notLoggedin " v-else>
+You are not Logged in!
+</div>
 
 
     
@@ -102,7 +102,15 @@ const session = useSession();
    }
    
    
-   
+   .notLoggedin{
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: black;
+}
 
   
 

@@ -53,13 +53,13 @@ import { useSession, addMessage } from '@/model/session';
                     <option value="all">All</option>
                     <div class="field is-grouped">
            
-                        <div class="control">
-                                <button class="button is-link">Submit</button>
-                            </div>
-                            <div class="control">
-                                <button class="button is-link is-light">Cancel</button>
-                            </div>
+                <div class="control">
+                        <button class="button is-link">Submit</button>
                     </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
+                    </div>
+                </div>
 
                 
                 </select> 

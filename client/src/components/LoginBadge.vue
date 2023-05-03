@@ -19,19 +19,20 @@ function logout2() {
                 Welcome, {{ session.user.name }}
                 (<a @click="logout2()">logout</a>)
             </div>
-            <div class="navbar-item" v-else>
-                <a class="button is-primary" @click="login">
+            <div class="navbar-item spacer" v-else>
+                <RouterLink to="/login" class=" spacer button is-info">
                     <span class="icon">
                         <i class="fas fa-user"></i>
                     </span>
                     <strong>Login</strong>
-                </a>
-                <a class="button is-info">
+                </RouterLink>
+                    
+                <router-link to="/register" class="button spacer is-info">
                     <span class="icon">
                         <i class="fas fa-user-plus"></i>
                     </span>
                     <strong>Sign up</strong>
-                </a>
+                </router-link>
             </div>
 
 
@@ -39,5 +40,10 @@ function logout2() {
 </template>
 
 <style scoped>
+
+.spacer {
+    margin-left: 1em;
+    margin: 10p;
+}
 
 </style>
