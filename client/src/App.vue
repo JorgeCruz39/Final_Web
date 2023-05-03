@@ -18,4 +18,6 @@ import NavBar from './components/NavBar.vue';
 
 <style scoped>
 
+
+
 </style>
