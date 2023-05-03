@@ -4,7 +4,7 @@
 import { computed, ref } from "vue";
 import type { Excercise } from "./Excercise";
 
-export const WorkoutCollection = ref([] as WorkoutItem[]);
+const WorkoutCollection = ref([] as WorkoutItem[]);
 
 export function useWorkoutCollection() {
     return WorkoutCollection;
@@ -39,12 +39,4 @@ export function removeFromWorkout(index: number) {
         WorkoutCollection.value.splice(index, 1);
 }
 
-
-
 export const amountofWorkouts = computed(() => WorkoutCollection.value.reduce((total, item) => total + item.quantity, 0));
-export const calories = computed(()=> WorkoutCollection.value.reduce((total, item) => total + item.reps * item.quantity *(13.2), 0))
-
-export function clearWorkoutCollection() {
-    WorkoutCollection.value = [];
-}
-

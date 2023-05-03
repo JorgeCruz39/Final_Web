@@ -1,31 +1,7 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import {  getWorkouts, type Workout } from '@/model/Workouts';
-import { createWorkout } from '@/model/Workouts';
-import { useSession, addMessage } from '@/model/session';
-import { useRoute } from 'vue-router';
-import { useWorkoutCollection, WorkoutCollection } from '../model/workoutCollection';
-
-const session = useSession();
-const route = useRoute(); 
-
-
-const collectionWorkouts = ref(useWorkoutCollection());
-
-
-  
-console.log(collectionWorkouts.value)
-</script>
-
 <template>
-
-
-
-<div v-for="workout in collectionWorkouts" >
-  {{ workout.product.exercise }}
-</div>
-
-  
+  <div class="about">
+    <h1>This is an about page</h1>
+  </div>
 </template>
 
 <style>

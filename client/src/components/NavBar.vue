@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import { WorkoutCollection } from '../model/workoutCollection';
+import { quantity } from '../model/cart';
 import Cart from './Cart.vue';
 import Flyout from './Flyout.vue';
 import LoginBadge from './LoginBadge.vue';
@@ -20,6 +20,11 @@ import Notifications from './Notifications.vue';
     <nav class="navbar is-primary">
         <div class="container">
         <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            
+            <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
+            
+          </a>
           <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
             <span></span>
             <span></span>
@@ -30,9 +35,7 @@ import Notifications from './Notifications.vue';
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
 
-            <RouterLink class="navbar-item" to="/homeview">
-          <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="28" height="22" />
-        </RouterLink>
+            <RouterLink to="/" class="navbar-item">Home</RouterLink>
             <RouterLink to="/about" class="navbar-item">About</RouterLink>
             <RouterLink to="/products" class="navbar-item">Products</RouterLink>
 
@@ -48,9 +51,6 @@ import Notifications from './Notifications.vue';
                 <RouterLink class="navbar-item" to="/admin/users">
                   Users
                 </RouterLink>
-                <RouterLink class="navbar-item" to="/admin/excerciselist">
-                  Excercises
-                </RouterLink>
                 
               </div>
             </div>
@@ -63,7 +63,7 @@ import Notifications from './Notifications.vue';
                 <button class="button  is-primary" :class="{ 'is-active': isCartActive }" @click="isCartActive = !isCartActive">
                     <span class="icon">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="tag is-danger quantity-tag">{{ WorkoutCollection.length }}</span>
+                        <span class="tag is-danger quantity-tag">{{ quantity }}</span>
                     </span>
                 </button>
             </div>

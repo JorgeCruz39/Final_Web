@@ -25,7 +25,7 @@ const weight = ref(0)
         <!--Form to select body part from excercises using vmodel-->
         <form>
             <label for="bodyPart">Select a Body Part:</label>
-            <select class="input" v-model="selected" selected="chest" >
+            <select v-model="selected" selected="chest">
                 <option value="chest">Chest</option>
                 <option value="back">Back</option>
                 <option value="legs">Legs</option>
@@ -33,9 +33,6 @@ const weight = ref(0)
                 <option value="shoulder">Shoulders</option>
                 <option value="abs">Abs</option>
                 <option value="all">All</option>
-                <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
             </select>
         </form>
 
@@ -45,24 +42,18 @@ const weight = ref(0)
         <progress v-if="!excercises.length" class="progress is-large is-info" max="100">60%</progress>
         <!--Display excercises by body part -->
         <div> 
-            <br>
                 <h1>Dont See an excercise? Click Here to add one!</h1>
                 <router-link to="excerciseAdd">
-                    <button class="button">Add an excercise</button>
-
+                    <span>Add an excercise</span>
                 </router-link>
-                <br>
 
              </div>
-             <hr>
         <div class="product-list" v-for="excercise in excercises " :key="excercise.id" >
             <div class="product" v-if="excercise.bodyPart === selected ">
                 <div >
                     <h1 class="pop">{{ excercise.exercise }}</h1>
                     <p >{{ excercise.description }}</p>
                     <br>
-                    <br>
-
                     <form>
                         <label for="reps">Reps:</label>
                         <input type="number" id="reps" name="reps" v-model="reps">
@@ -73,9 +64,6 @@ const weight = ref(0)
                     </form>
 
                     <br>
-                    <br>
-                    <br>
-                    
                     <p><button class="button is-primary" @click="addToWorkoutCollection(excercise,weight,sets,reps)">Add excercise to workouts +</button>
                         <br>
                         <br>
@@ -85,7 +73,6 @@ const weight = ref(0)
                     </p>
                     
                 </div>
-                <br>
             </div>
             
 
@@ -102,7 +89,7 @@ const weight = ref(0)
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        background-color: white;
+        background-color: aliceblue;
     }
 
     .product {

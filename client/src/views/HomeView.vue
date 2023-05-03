@@ -1,26 +1,23 @@
 <script setup lang="ts">
-
+import Modal from '@/components/Modal.vue';
 import { ref } from 'vue';
 
-import {WorkoutCollection} from '@/model/workoutCollection';
-
-WorkoutCollection 
-
-console.log(WorkoutCollection )
+    const isOpen = ref(false);
 
 </script>
 
-
 <template>
-  <div>
-console.log({{ WorkoutCollection }})
-    <h1>Home View</h1>
-    
-  </div>
+  <main>
+    <h1 class="title">
+        This is our home page
+    </h1>
+
+    <p>
+        <button class="button" @click="isOpen = !isOpen">Open Modal</button>
+    </p>
+
+    <Modal v-model:is-open="isOpen" >
+        <h1 class="title">Some Content in the slot</h1>
+    </Modal>
+  </main>
 </template>
-
-
-
-<style scoped>
-
-</style>

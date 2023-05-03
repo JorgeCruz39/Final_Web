@@ -15,7 +15,7 @@ const session = reactive({
     redirectUrl: null as string | null,
 })
 
-export interface User {
+interface User {
     id?: number;
     name: string;
     email?: string;
@@ -36,9 +36,6 @@ export function api(url: string, data?: any, method?: string, headers?: any) {
             ...headers,
         }
     }
-
-
-
 
     return myFetch.api(url, data, method, headers)
         .catch(err => {

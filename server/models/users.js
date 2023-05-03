@@ -2,11 +2,25 @@
 const jwt = require('jsonwebtoken');
 const { connect, ObjectId } = require('./mongo');
 const { env } = require('process');
-const data = require('../data/users.json');
 
 const COLLECTION_NAME = 'users';
 
-
+const data = [
+    {
+        "name": "John Doe",
+        "email": "john@doe.com",
+        "password": "123456",
+        "photo": "https://robohash.org/hicveldicta.png?size=50x50&set=set1",
+        "role": "admin",
+    },
+    {
+        "name": "Jane Doe",
+        "email": "jane@doe.com",
+        "password": "123456",
+        "photo": "https://robohash.org/autemquidemvoluptatem.png?size=50x50&set=set1",
+        "role": "user",
+    },
+]
 
 async function collection() {
     const db = await connect();

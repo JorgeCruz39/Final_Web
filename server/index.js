@@ -5,7 +5,6 @@ const jokes = require('./controllers/jokes');
 const products = require('./controllers/products')
 const users = require('./controllers/users')
 const excercise = require('./controllers/excercise')
-const workouts = require('./controllers/workouts')
 const { requireLogin, parseAuthorizationHeader } = require('./middleware/authorization')
 const app = express()
 
@@ -42,7 +41,6 @@ app
     .use('/api/v1/users', users)
     .use('/api/v1/jokes', jokes)
     .use('/api/v1/excercise', excercise)
-    .use('/api/v1/workouts', workouts)
 
 // Catch all
 app.get('*', (req, res) => {
