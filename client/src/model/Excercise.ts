@@ -25,3 +25,6 @@ export function createExcercise(excercise: Excercise): Promise<DataEnvelope<Exce
         return api('excercise', excercise)
 }
 
+export function deleteExcercise(id: number): Promise<DataEnvelope<Excercise>> {
+        return api(`excercise/${id}`, undefined, 'DELETE')
+}

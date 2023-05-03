@@ -1,8 +1,13 @@
 <script setup lang="ts">
-    import { removeFromWorkout, amountofWorkouts, useWorkoutCollection } from '@/model/workoutCollection';
+    import { removeFromWorkout, amountofWorkouts, useWorkoutCollection, clearWorkoutCollection, WorkoutCollection, } from '@/model/workoutCollection';
+    import { ref } from 'vue';
+    import { createWorkout } from '@/model/Workouts';
     const workoutCollection = useWorkoutCollection();
 
+
     
+
+
 </script>
 
 <template>
@@ -36,6 +41,15 @@
                 </span>
             </button>
         </div>
+        <br>
+        <button class="button is-primary" @click="clearWorkoutCollection()">
+            Clear Workouts
+        </button>
+        <br>
+        <button class="button is-primary" @click="createWorkout(WorkoutCollection)">
+            Save Workouts
+        </button>
+        
     </div>
 </template>
 

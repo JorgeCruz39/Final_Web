@@ -17,6 +17,9 @@ export function rest(url: string, data?: any, method?: string, headers?: any){
         );
 }
 
+
+
+
 export function api(url: string, data?: any, method?: string, headers?: any){
     return rest(API_URL + url, data, method, headers);
 }

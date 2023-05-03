@@ -51,6 +51,9 @@ import Notifications from './Notifications.vue';
                 <RouterLink class="navbar-item" to="/admin/users">
                   Users
                 </RouterLink>
+                <RouterLink class="navbar-item" to="/admin/excerciselist">
+                  Excercises
+                </RouterLink>
                 
               </div>
             </div>

@@ -41,7 +41,7 @@ import { useSession, addMessage } from '@/model/session';
             </div>
 
             <div class="field">
-            <label class="label">Price</label>
+            <label class="label">Muscle Group</label>
             <div class="control">
                 <select class="input" type="string" placeholder="Price" v-model="excercise.bodyPart">
                     <option value="chest">Chest</option>
@@ -51,7 +51,11 @@ import { useSession, addMessage } from '@/model/session';
                     <option value="shoulder">Shoulders</option>
                     <option value="abs">Abs</option>
                     <option value="all">All</option>
-                    <div class="field is-grouped">
+                    
+
+                
+                </select> 
+                <div class="field is-grouped">
            
                         <div class="control">
                                 <button class="button is-link">Submit</button>
@@ -60,10 +64,6 @@ import { useSession, addMessage } from '@/model/session';
                                 <button class="button is-link is-light">Cancel</button>
                             </div>
                     </div>
-
-                
-                </select> 
-                
             </div>
             </div>
 

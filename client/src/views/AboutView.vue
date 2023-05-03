@@ -1,7 +1,30 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import {  getWorkouts, type Workout } from '@/model/Workouts';
+import { createWorkout } from '@/model/Workouts';
+import { useSession, addMessage } from '@/model/session';
+import { useRoute } from 'vue-router';
+
+const session = useSession();
+const route = useRoute(); 
+
+const workouts = ref<Workout[]>([]);
+
+  getWorkouts().then((data) => {
+    workouts.value = data.data;
+});
+
+
+
+  
+
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+
+
+
+  
 </template>
 
 <style>
