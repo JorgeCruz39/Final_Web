@@ -1,23 +1,109 @@
 <script setup lang="ts">
-import Modal from '@/components/Modal.vue';
-import { ref } from 'vue';
+import WorkoutBox from '@/components/WorkoutStat.vue'
+import { useSession, totalWeight } from '@/model/session';
 
-    const isOpen = ref(false);
+
+const session = useSession();
 
 </script>
 
 <template>
-  <main>
-    <h1 class="title">
-        This is our home page
-    </h1>
 
-    <p>
-        <button class="button" @click="isOpen = !isOpen">Open Modal</button>
-    </p>
 
-    <Modal v-model:is-open="isOpen" >
-        <h1 class="title">Some Content in the slot</h1>
-    </Modal>
-  </main>
+ 
+<div v-if="session.user">
+   <div class="container">
+      <div class="columns">
+         <div class="column">
+            <div class="clean is-primary">
+               <div class="title"> Just This Week</div>
+               <WorkoutBox />
+               <hr>
+               <div class="title"> Previous </div>
+               <WorkoutBox >
+                  <template #totalWeight> 
+                     {{ totalWeight }}
+                  </template>
+                  <template #totalLifts>
+                     {{ session.user.workouts.length }}
+                  </template>
+               </WorkoutBox>
+            </div>
+         </div>
+         <div class="column">
+            <div class=" clean is-light">
+               <div class="title"> All Time</div>
+               <WorkoutBox >
+                  <template #totalWeight> 
+                     {{ totalWeight }}
+                  </template>
+                  <template #totalLifts>
+                     {{ session.user.workouts.length }}
+                  </template>
+               </WorkoutBox>
+               <hr>
+               <div class="title"> Today</div>
+               <WorkoutBox >
+                  <template #totalWeight> 
+                     {{ totalWeight }}
+                  </template>
+                  <template #totalLifts>
+                     {{ session.user.workouts.length }}
+                  </template>
+               </WorkoutBox>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+   <div v-else>
+     <h1>Not Logged in!</h1>
+   </div>
+
+
+    
+
+
+  
 </template>
+
+<style scoped>
+
+.container{
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+   }
+   .title{
+      
+      padding: 0;
+      margin: 20px;
+      background-color: transparent;
+      
+      
+   }
+    .clean{
+        padding: 0;
+        margin: 0;
+        background-color: rgba(255, 214, 190, 0.836);
+   }
+   .column{
+      padding: 1rem;
+      margin: 1rem;
+      background-color: transparent;
+   }
+   .box{
+      background-color: white;
+      color: white;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 0;
+   }
+   
+   
+   
+
+  
+
+</style>

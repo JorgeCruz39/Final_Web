@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { deleteExcercise, getExcercise, getExcercises, type Excercise } from '../../model/Excercise';
+import {  getExcercise, getExcercises, type Excercise } from '../../model/Excercise';
 
 
 const excercises = ref<Excercise[]>([]);
@@ -58,7 +58,7 @@ const weight = ref(0)
                                     <i class="fas fa-edit"></i>
                                 </div>
                             </router-link>
-                            <button type="submit" class="button" @click="deleteExcercise(excercise.id)" >
+                            <button type="submit" class="button" @click="(excercise.id)" >
                                 <div class="icon">
                                     <i class="fas fa-trash"></i>
                                 </div>
