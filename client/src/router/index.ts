@@ -12,6 +12,7 @@ import excerciseAdd from '@/views/excerciseAdd.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    { path: '/homeview', name: 'home', component: HomeView },
     { path: '/', name: 'home', component: HomeView },
     { path: '/products', name: 'products', component: ProductsVue, beforeEnter: secureRoute },
     { path: '/login', name: 'login', component: LoginVue },

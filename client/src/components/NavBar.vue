@@ -35,7 +35,9 @@ import Notifications from './Notifications.vue';
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
 
-            <RouterLink to="/" class="navbar-item">Home</RouterLink>
+            <RouterLink class="navbar-item" to="/homeview">
+          <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="28" height="22" />
+        </RouterLink>
             <RouterLink to="/about" class="navbar-item">About</RouterLink>
             <RouterLink to="/products" class="navbar-item">Products</RouterLink>
 
