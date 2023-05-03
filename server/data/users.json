@@ -3,9 +3,9 @@
     {
       "id" : 1,
       "name" : "John",
-      "email" : "john.doe@example.com",
+      "email" : "admin",
       "photo" : "https://example.com/john.jpg",
-      "password" : "new_password",
+      "password" : "admin",
       "isAdmin" : true,
       "workouts" : [
         {"name": "Bench Press",
@@ -21,6 +21,7 @@
           "weight": 0
         }
       ]
+  
     },
     {
       "id" : 2,

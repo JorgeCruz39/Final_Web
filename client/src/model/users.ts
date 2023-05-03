@@ -21,12 +21,25 @@ export function getUsers(): Promise<DataListEnvelope<User>> {
 
 }
 
-export function getProduct(_id: number): Promise<DataEnvelope<User>> {
+export function getUser(id: number): Promise<DataEnvelope<User>> {
 
-    return api(`users/${_id}`)
+    return api(`users/${id}`)
 
 }
 
 export function createUser(user: User): Promise<DataEnvelope<User>> {
-        return api('user', user)
+
+    return api('users/', user, 'POST')
+}
+
+export function deleteUser(id: number): Promise<void> {
+    
+    return api(`users/${id}`, undefined, 'DELETE')
+
+}
+
+export function updateUser(user: User): Promise<DataEnvelope<User>> {
+
+    return api(`users/`, user, 'PUT')
+
 }

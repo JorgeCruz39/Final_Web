@@ -3,9 +3,13 @@ import { createRouter, createWebHistory, type NavigationGuardNext, type RouteLoc
 import HomeView from '../views/HomeView.vue'
 import ProductsVue from '@/views/Products.vue'
 import LoginVue from '@/views/Login.vue'
-import { useSession } from '@/model/session'
+import { addWorkout, useSession } from '@/model/session'
 import storelocation from '../views/storelocations.vue'
 import excerciseAdd from '@/views/excerciseAdd.vue'
+import register from '@/views/register.vue'
+import addWorkoutpage from '@/views/addWorkoutpage.vue'
+
+
 
 
 
@@ -13,6 +17,8 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'home', component: HomeView },
+    { path: '/addWorkout', name: 'addWorkout', component: addWorkoutpage },
+    { path: '/register', name: 'register', component: register },
     { path: '/products', name: 'products', component: ProductsVue, beforeEnter: secureRoute },
     { path: '/login', name: 'login', component: LoginVue },
     { path: '/excerciseAdd', name: 'excerciseAdd', component: excerciseAdd },

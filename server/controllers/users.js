@@ -32,7 +32,7 @@ router
 
     })
 
-    .post('/', requireLogin(true) ,(req, res, next) => {
+    .post('/',(req, res, next) => {
     
         model.add(req.body)
             .then(x => {
@@ -42,7 +42,7 @@ router
 
     })
 
-    .patch('/', requireLogin(true) ,(req, res, next) => {
+    .patch('/', (req, res, next) => {
 
         model.update(req.body)
             .then(x => {
