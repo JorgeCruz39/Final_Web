@@ -21,11 +21,9 @@ const session = useSession();
     <nav class="navbar is-primary ">
         <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            
-            <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
-            
-          </a>
+          <icon>
+            <i class="fas fa-dumbbell down"></i>
+          </icon>
           <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
             <span></span>
             <span></span>
@@ -89,5 +87,11 @@ const session = useSession();
         top: -5px;
         right: -5px;
         border-radius: 1rem;
+    }
+
+    .down {
+        font-size: 2rem;
+        margin-right: 0.5rem;
+        margin: 10px;
     }
 </style>
