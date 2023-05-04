@@ -46,12 +46,12 @@ const userWorkie = ref(workie)
                 <div class="level-left">
                   <a class="level-item" aria-label="reply">
                     <span class="icon is-small">
-                      <i class="fas fa-reply" aria-hidden="true"></i>
+                      <i class="fas fa-retweet" aria-hidden="true"></i>
                     </span>
                   </a>
                   <a class="level-item" aria-label="retweet">
                     <span class="icon is-small">
-                      <i class="fas fa-retweet" aria-hidden="true"></i>
+                      <i class="fas fa-reply" aria-hidden="true"></i>
                     </span>
                   </a>
                   <a class="level-item" aria-label="like">

@@ -50,15 +50,14 @@ import { useSession, addMessage } from '@/model/session';
                     <option value="arm">Arms</option>
                     <option value="shoulder">Shoulders</option>
                     <option value="abs">Abs</option>
-                    <option value="all">All</option>
                     
            </select>
             <div class="field is-grouped">
                 <div class="control">
-                        <button class="button is-link">Submit</button>
+                        <button class="button is-link" @click="$emit('close')">Submit</button>
                     </div>
                     <div class="control">
-                        <button class="button is-link is-light">Cancel</button>
+                        <button class="button is-link is-light" @click="$emit('close')" >Cancel</button>
                     </div>
                 </div>
 

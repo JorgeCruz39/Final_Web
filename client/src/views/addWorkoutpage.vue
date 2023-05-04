@@ -30,13 +30,13 @@ function toggleWorkout() {
 
                 <div class="moveplease">
                     <div class="column">
-                  <h2 class="title">Workouts done by you!</h2>
+                  <h2 class="title">Workouts done by {{session.user.name}}!</h2>
                     <div v-for="w in session.user?.workouts.slice().reverse()" :key="w.workout">
                          <WorkoutSocial :workout="w" @close="$emit('close')" />
                      </div>
                  </div>
                  </div>
-                <div class="button is-primary is-large is-fullwidth" @click="toggleWorkout" > Add Workout</div>                                      
+                <div class="button  is-fullwidth" @click="toggleWorkout" > Add Workout</div>                                      
             </div>
 
             </div>
@@ -65,11 +65,24 @@ You are not Logged in!
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 10px #999;
+    box-shadow: 0 10px rgb(0, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.1s;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 
 .modal{
+    display: block;
     position: fixed;
     z-index: 1;
     left: 0;

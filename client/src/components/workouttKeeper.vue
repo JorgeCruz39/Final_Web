@@ -1,8 +1,8 @@
 <script setup lang="ts">
-    import { removeFromWorkout, amountofWorkouts, useWorkoutCollection } from '@/model/workoutCollection';
-    const workoutCollection = useWorkoutCollection();
+import { removeFromWorkout, amountofWorkouts, useWorkoutCollection } from '@/model/workoutCollection';
+const workoutCollection = useWorkoutCollection();
 
-    
+
 </script>
 
 <template>
@@ -26,7 +26,7 @@
                     Number of reps in set : {{ item.reps }}
                     <br>
                     Weight on workout: {{ item.weight }}
-                    
+
                 </p>
 
             </div>
@@ -41,31 +41,33 @@
 
 
 <style scoped>
-    .cart {
-        margin: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .cart-item {
+.cart {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin: 5px;
-        padding-right: 5px;
+.cart-item {
 
-        overflow: hidden;
-        background-color: lavenderblush;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    padding-right: 5px;
 
-    }
-    .cart-item img {
-        width: 100px;
-        height: 100px;
-    }
+    overflow: hidden;
+    background-color: lavenderblush;
 
-    small {
-        font-size: 0.5em;
-    }
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+}
+
+small {
+    font-size: 0.5em;
+}
 </style>

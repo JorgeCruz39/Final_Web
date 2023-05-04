@@ -4,7 +4,6 @@ import HomeView from '../views/HomeView.vue'
 import ProductsVue from '@/views/Products.vue'
 import LoginVue from '@/views/Login.vue'
 import { addWorkout, useSession } from '@/model/session'
-import storelocation from '../views/storelocations.vue'
 import excerciseAdd from '@/views/excerciseAdd.vue'
 import register from '@/views/register.vue'
 import addWorkoutpage from '@/views/addWorkoutpage.vue'
@@ -31,7 +30,6 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
-    { path: '/storelocations', name: 'Storelocations', component: storelocation},
     { path: '/admin/products', name: 'admin-products', component: () => import('../views/admin/ProductsList.vue'), beforeEnter: secureRoute },
     { path: '/admin/usersView', name: 'admin-userView', component: () => import('../views/admin/usersView.vue'), beforeEnter: secureRoute },
   ]

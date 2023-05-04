@@ -3,6 +3,12 @@
 import { ref } from 'vue';
 import {  getExcercises, type Excercise } from '../../model/Excercise'
 import {addToWorkoutCollection} from '../../model/workoutCollection'
+import { amountofWorkouts } from '../../model/workoutCollection';
+import Cart from '../../components/workouttKeeper.vue';
+import Flyout from '../../components/Flyout.vue';
+import LoginBadge from '../../components/LoginBadge.vue';
+import Notifications from '../../components/Notifications.vue';
+import { useSession } from '@/model/session';
 
 const excercises = ref<Excercise[]>([]);
 getExcercises().then((data) => {
@@ -12,6 +18,8 @@ getExcercises().then((data) => {
 const selected = ref('')
 
 const reps = ref(0)
+
+const isCartActive = ref(false);
 const sets = ref(0)
 const weight = ref(0)
 
@@ -48,6 +56,18 @@ const weight = ref(0)
                 </router-link>
 
              </div>
+             <button class="button  is-primary" :class="{ 'is-active': isCartActive }"
+              @click="isCartActive = !isCartActive">
+              <span class="icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="tag is-danger quantity-tag">{{ amountofWorkouts }}</span>
+              </span>
+            </button>
+
+             <Flyout :class="{ 'is-active': isCartActive }">
+    <Cart />
+  </Flyout>
+
         <div class="product-list" v-for="excercise in excercises " :key="excercise.id" >
             <div class="product" v-if="excercise.bodyPart === selected ">
                 <div >

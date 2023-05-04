@@ -1,4 +1,12 @@
-[
+[ 
+    {
+        "workout": "Overhead Press",
+        "weight": "0"
+    },
+    {
+        "workout": "Barbell Row",
+        "weight": "0"
+    },
     {
         "workout": "Bench Press",
         "weight": "0"

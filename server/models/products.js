@@ -1,4 +1,4 @@
-const data = require('../data/products.json');
+
 const { connect, ObjectId } = require('./mongo');
 
 const COLLECTION_NAME = 'products';
