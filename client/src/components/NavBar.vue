@@ -50,7 +50,7 @@ const session = useSession();
                 <RouterLink class="navbar-item" to="/admin/products">
                   Products
                 </RouterLink>
-                <RouterLink class="navbar-item" to="/admin/users">
+                <RouterLink class="navbar-item" to="/admin/usersView">
                   Users
                 </RouterLink>
                 

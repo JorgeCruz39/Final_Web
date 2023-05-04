@@ -67,8 +67,8 @@ function login() {
         </div>
 
      </div>
-     <div v-else>
-            <h1>Already logged in</h1>
+     <div v-else class="notLoggedin">
+            <h1>Logged in</h1>
      </div>
  </template>
 
@@ -97,8 +97,19 @@ function login() {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        
  }
 
+ .notLoggedin{
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: black;
+}
 
 
  </style>

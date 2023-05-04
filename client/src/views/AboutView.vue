@@ -7,26 +7,6 @@ import { addMessage } from "../model/session";
 
 
 
-const session = useSession();
-const email = ref('');
-const password = ref('');
-function login() {
-    loginWithServer(email.value, password.value).then((user) => {
-        if(user.name === null || user === undefined){
-          addMessage("user is null", "warning");
-            return;
-        }
-    else{
-        router.push("/home");
-    }
-
-       
-    });
-}
-
-
-
-
      
     
 
@@ -34,39 +14,27 @@ function login() {
 
  <template>
      <div class="box">
+        <div>
+            <h1 class="title">Instructions on how to use my Web App</h1>
+            <h2 class="subtitle">Please follow the instructions below</h2>
+            <ol>
 
-        
-        <div class="form">
+                <li>You can log in with username Admin and Password: Admin</li>
+                <li>You will be able to register an account</li>
+                <li>After you have registered an account you will need to login</li>
+                <li>After you have logged in you will be able to create a new post</li>
+                <li>After you have created a new post you will be able to view your post</li>
+                <li>You Will be able to view all users posts</li>
+                <li>Admin have extra permis</li>
 
-            <h1 class="title">Login</h1>
-            <h2 class="subtitle">Please enter your credentials</h2>
-    
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                    <input class="input" type="email" v-model="email">
-                </div>
-            </div>
-    
-            <div class="field">
-                <label class="label">Password</label>
-                <div class="control">
-                    <input class="input" type="password" v-model="password">
-                </div>
-            </div>
-    
-            <div class="field">
-                <div class="control">
-                    <button class="button is-link" @click="login">Login</button>
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <p>Don't have an account? <router-link to="/register">Register</router-link></p>
-                </div>
-            </div>
 
+            </ol>
+            
+
+            
         </div>
+        
+        
 
      </div>
  </template>
@@ -105,7 +73,6 @@ function login() {
         height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
  }
 
 
