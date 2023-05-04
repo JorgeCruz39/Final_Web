@@ -33,8 +33,8 @@ function login() {
  </script>
 
  <template>
-     <div class="box" v-if="session.user == null" >
-        <div class="form">
+     <div v-if="session.user == null" >
+        <div class="form box">
 
             <h1 class="title">Login</h1>
             <h2 class="subtitle">Please enter your credentials</h2>
@@ -82,6 +82,7 @@ function login() {
      margin-bottom: 1rem;
      text-align: center;
      color: black;
+     
     
  }
  .subtitle{
@@ -89,16 +90,16 @@ function login() {
      font-size: 16px;
      line-height: 1.2;
      text-align: center;
+        margin-bottom: 1rem;
+
  }
 
  .box{
-        background-color: transparent;
         height: 100vh;
-        display: flex;
+            display: flex;
         justify-content: center;
         align-items: center;
-
-        
+        flex-direction: column;
  }
 
  .notLoggedin{
