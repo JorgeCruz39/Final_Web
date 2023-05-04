@@ -8,6 +8,7 @@ import storelocation from '../views/storelocations.vue'
 import excerciseAdd from '@/views/excerciseAdd.vue'
 import register from '@/views/register.vue'
 import addWorkoutpage from '@/views/addWorkoutpage.vue'
+import socialView from '@/views/socialView.vue'
 
 
 
@@ -19,7 +20,7 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomeView },
     { path: '/addWorkout', name: 'addWorkout', component: addWorkoutpage },
     { path: '/register', name: 'register', component: register },
-    { path: '/products', name: 'products', component: ProductsVue, beforeEnter: secureRoute },
+    { path: '/socialView', name: 'socialView', component: socialView },
     { path: '/login', name: 'login', component: LoginVue },
     { path: '/excerciseAdd', name: 'excerciseAdd', component: excerciseAdd },
     {

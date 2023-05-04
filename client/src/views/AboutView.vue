@@ -25,7 +25,8 @@ import { addMessage } from "../model/session";
                 <li>After you have logged in you will be able to create a new post</li>
                 <li>After you have created a new post you will be able to view your post</li>
                 <li>You Will be able to view all users posts</li>
-                <li>Admin have extra permis</li>
+                <li>Admin have extra permission which will allow you to view the</li>
+                <li>Beta Version Of the app which you can add new excercises outside of pre added ones (add to database of excercise)</li>
 
 
             </ol>
