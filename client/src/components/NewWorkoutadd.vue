@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useSession, useWorkout, addWorkout, addMessage, updateUser, type User } from '@/model/session';
 import { ref } from 'vue';
+import AutoComplete from 'primevue/autocomplete';
 
 const session = useSession();
 const user = ref(session.user);
@@ -21,6 +22,13 @@ function saveWrk(workoutName: string, workoutWeight: number) {
 }
 const workoutName = ref('');
 const workoutWeight = ref(0);
+const user1 = ref('');
+
+const items = ref([]);
+async function search(event: {query: string}) {
+    const response = await fetch(`http://localhost:3000/api/users/${event.query}`);
+    items.value = await response.json();
+}
 </script>
 <template>
     <div>
@@ -53,6 +61,13 @@ const workoutWeight = ref(0);
                         </div>
                     </div>
                 </div>
+                <div class="field">
+                    <label class="labelWeight">Tag Freinds</label>
+                    <div class="control">
+                        <AutoComplete v-model="User" :suggestions="items" @complete="search" />
+                    </div>
+                </div>
+                
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success" @click="saveWrk(workoutName, workoutWeight), $emit('close')">Add</button>

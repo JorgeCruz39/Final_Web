@@ -12,7 +12,7 @@ router
             }).catch(next);
     })
 
-    .get('/search/:q', requireLogin(true) ,(req, res, next) => {
+    .get('/search/:query', requireLogin(true) ,(req, res, next) => {
 
         model.search(req.params.q, +req.query.page, +req.query.pageSize)
             .then(list => {

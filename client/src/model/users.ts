@@ -15,6 +15,8 @@ export interface User {
     
 }
 
+
+
 export function getUsers(): Promise<DataListEnvelope<User>> {
 
     return api('users')
@@ -41,5 +43,11 @@ export function deleteUser(id: number): Promise<void> {
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
     return api(`users/`, user, 'PUT')
+
+}
+
+export function searchUser (search: string): Promise<DataListEnvelope<User>> {
+
+    return api(`users/search/${search}`)
 
 }

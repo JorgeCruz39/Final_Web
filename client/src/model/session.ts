@@ -161,6 +161,12 @@ export function deleteUser(id: number): Promise<void> {
 
 }
 
+export function searchUser (search: string): Promise<DataListEnvelope<User>> {
+
+    return api(`users/search/${search}`)
+
+}
+
 export const recentWorkie = computed(() => session.user?.workouts[session.user?.workouts.length - 1]);
 
 
